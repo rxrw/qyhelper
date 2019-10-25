@@ -77,8 +77,6 @@ export default {
 
       let actual_second = seconds / (1 + this.speed/100)
 
-      console.log(actual_second)
-
       let onepercent100 = actual_second * 0.01
       let helps = 0
       if (onepercent100 < 60) {
@@ -89,8 +87,6 @@ export default {
 
       let help_secnods = this.help_time * helps * 0.01
       let actual_seconds = actual_second - help_secnods
-
-      console.log(actual_seconds)
 
       let days = Math.floor(actual_seconds / 86400)
       let hours = Math.floor((actual_seconds % 86400) / 3600)
