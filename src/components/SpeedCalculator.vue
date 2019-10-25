@@ -77,6 +77,7 @@ export default {
 
       let actual_second = seconds / (1 + this.speed/100)
 
+      console.log(actual_second)
 
       let onepercent100 = actual_second * 0.01
       let helps = 0
@@ -86,13 +87,15 @@ export default {
         helps = actual_second * 0.01
       }
 
-      let help_secnods = (100 - this.help_time) * helps * 0.01
+      let help_secnods = this.help_time * helps * 0.01
       let actual_seconds = actual_second - help_secnods
+
+      console.log(actual_seconds)
 
       let days = Math.floor(actual_seconds / 86400)
       let hours = Math.floor((actual_seconds % 86400) / 3600)
       let minutes = Math.floor(((actual_seconds % 86400) % 3600) / 60)
-      let seconds1 = Math.floor(((actual_seconds % 86400) % 3600) % 60)
+      let seconds1 = Math.round(((actual_seconds % 86400) % 3600) % 60)
 
       this.actual_days = days + "天" + hours + "时" + minutes + "分" + seconds1 + "秒";
     }
