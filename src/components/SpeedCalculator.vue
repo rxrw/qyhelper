@@ -73,7 +73,15 @@ export default {
   methods:{
     calculate(){
       let origin = this.origin_days.split(".")
-      let seconds = origin[0] * 86400 + origin[1] * 3600 + origin[2] * 60 + Math.floor(origin[3])
+      let od = origin[0]?origin[0]:0
+
+      let oh = origin[1]?origin[1]:0
+
+      let om = origin[2]?origin[2]:0
+
+      let os = origin[3]?origin[3]:0
+
+      let seconds = od * 86400 + oh * 3600 + om * 60 + Math.floor(os)
 
       let actual_second = seconds / (1 + this.speed/100)
 
