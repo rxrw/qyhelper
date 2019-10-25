@@ -85,7 +85,7 @@ export default {
         helps = actual_second * 0.01
       }
 
-      let help_secnods = this.help_time * helps * 0.01
+      let help_secnods = this.help_time * helps
       let actual_seconds = actual_second - help_secnods
 
       let days = Math.floor(actual_seconds / 86400)
