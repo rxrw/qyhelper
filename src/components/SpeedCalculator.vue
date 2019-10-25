@@ -90,9 +90,9 @@ export default {
       let actual_seconds = actual_second - help_secnods
 
       let days = Math.floor(actual_seconds / 86400)
-      let hours = Math.floor((actual_seconds % 86400) / 24)
-      let minutes = Math.floor(((actual_seconds % 86400) % 24) / 3600)
-      let seconds1 = Math.floor(((actual_seconds % 86400) % 24) % 60)
+      let hours = Math.floor((actual_seconds % 86400) / 3600)
+      let minutes = Math.floor(((actual_seconds % 86400) % 3600) / 60)
+      let seconds1 = Math.floor(((actual_seconds % 86400) % 3600) % 60)
 
       this.actual_days = days + "天" + hours + "时" + minutes + "分" + seconds1 + "秒";
     }
