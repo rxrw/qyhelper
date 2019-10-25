@@ -73,12 +73,10 @@ export default {
   methods:{
     calculate(){
       let origin = this.origin_days.split(".")
-      console.log(origin)
-      console.log(origin[0] * 86400, origin[1] * 3600,origin[2] * 60,origin[3])
       let seconds = origin[0] * 86400 + origin[1] * 3600 + origin[2] * 60 + Math.floor(origin[3])
-      console.log(seconds)
+
       let actual_second = seconds / (1 + this.speed/100)
-      console.log(actual_second)
+
 
       let onepercent100 = actual_second * 0.01
       let helps = 0
@@ -90,7 +88,7 @@ export default {
 
       let help_secnods = (100 - this.help_time) * helps * 0.01
       let actual_seconds = actual_second - help_secnods
-      console.log(actual_seconds)
+
       let days = Math.floor(actual_seconds / 86400)
       let hours = Math.floor((actual_seconds % 86400) / 24)
       let minutes = Math.floor(((actual_seconds % 86400) % 24) / 3600)
